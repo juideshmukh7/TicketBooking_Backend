@@ -1,0 +1,34 @@
+<header class="bg-blue-500 text-white p-4 shadow-md">
+  <nav class="container mx-auto flex justify-between items-center">
+    <ul class="flex space-x-4">
+      <li>
+        <a
+          href="/"
+          class="<%= currentPage === 'index' ? 'bg-blue-400' : 'hover:bg-blue-400' %> py-2 px-4 rounded transition duration-300"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/hotels"
+          class="<%= currentPage === 'hotels' ? 'bg-blue-400' : 'hover:bg-blue-400' %> py-2 px-4 rounded transition duration-300"
+          >Hotels</a
+        >
+      </li>
+      <li>
+        <a
+          href="/flights"
+          class="<%= currentPage === 'flights' ? 'bg-blue-400' : 'hover:bg-blue-400' %> py-2 px-4 rounded transition duration-300"
+          >Flights</a
+        >
+      </li>
+      <li>
+        <a
+          href="/cars"
+          class="<%= currentPage === 'cars' ? 'bg-blue-400' : 'hover:bg-blue-400' %> py-2 px-4 rounded transition duration-300"
+          >Cars</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

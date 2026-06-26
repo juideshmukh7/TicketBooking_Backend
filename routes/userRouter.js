@@ -1,19 +1,17 @@
-// core module
-const path = require('path');
 
-// external module
-const express = require('express');
+
+// External Module
+const express = require("express");
 const userRouter = express.Router();
 
-// local module
-const rootDir = require('../utils/pathUtil');
+// Local Module
+const userController = require("../controllers/userController");
 
-userRouter.get("/", (req, res, next) => {
-  res.sendFile(path.join(rootDir, 'views', 'home.html'));
-});
+userRouter.get("/", userController.getIndex);
 
-userRouter.post("/things-to-do", (req, res, next) => {
-  res.sendFile(path.join(rootDir, 'views', 'todo.html'));
-})
+
+// storeRouter.get("/homes/:homeId", storeController.getHomeDetails);
+// storeRouter.post("/favourites", storeController.postAddToFavourite);
+// storeRouter.post("/favourites/delete/:homeId", storeController.postRemoveFromFavourite);
 
 module.exports = userRouter;

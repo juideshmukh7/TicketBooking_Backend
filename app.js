@@ -1,13 +1,27 @@
-const http = require('http')
+// Core Module
+const path = require('path');
 
-function requestListener(req, res){
-  console.log(req.body);
-}
+// External Module
+const express = require('express');
 
-const server = http.createServer(requestListener);
+//Local Module
+const userRouter = require("./routes/userRouter")
+const hostRouter = require("./routes/hostRouter")
+const rootDir = require("./utils/pathUtil");
+
+const app = express();
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+app.use(express.urlencoded());
+app.use(userRouter);
+app.use(hostRouter);
+
+app.use(express.static(path.join(rootDir, 'public')))
+
 
 const PORT = 3001;
-
-server.listen(PORT, () => {
-  console.log(`Server is running at: http://localhost:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server running on address http://localhost:${PORT}`);
 });
