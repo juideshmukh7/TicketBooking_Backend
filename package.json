@@ -12,9 +12,19 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "tailwind": "tailwindcss -i ./views/input.css -o ./public/output.css --watch",
+    "start": "nodemon app.js & npm run tailwind"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "autoprefixer": "^10.5.2",
+    "nodemon": "^3.1.14",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.19"
+  },
+  "dependencies": {
+    "body": "^5.1.0",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "parser": "^0.1.4"
   }
 }
